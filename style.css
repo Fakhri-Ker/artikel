@@ -1,4 +1,3 @@
-/* style.css */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -14,9 +13,11 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
-    text-align: left; /* Teks rata kiri sesuai kaidah UX materi CMS */
+    text-align: left;
+    overflow-x: hidden; /* Mencegah layar geser ke kanan/kiri */
 }
 
+/* Header & Hamburger */
 header {
     background-color: var(--primary-color);
     color: white;
@@ -25,14 +26,47 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none; /* Sembunyikan di PC */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 0;
 }
 
 header h1 {
     margin: 0;
     font-size: 1.5rem;
-    text-transform: capitalize; /* Hindari ALL CAPS sesuai aturan keamanan/UX */
+    text-transform: capitalize;
 }
 
+/* Overlay Gelap saat menu terbuka */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna abu-abu bayangan */
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Layout Utama */
 .container {
     display: flex;
     max-width: 1200px;
@@ -42,7 +76,7 @@ header h1 {
     min-height: 80vh;
 }
 
-/* Desain Sidebar */
+/* Sidebar PC */
 aside {
     flex: 0 0 var(--sidebar-width);
     background: white;
@@ -52,35 +86,21 @@ aside {
     height: fit-content;
     position: sticky;
     top: 90px;
+    transition: left 0.3s ease;
 }
 
-aside h3 {
-    margin-top: 0;
-    color: var(--primary-color);
-}
-
-aside ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-aside li {
-    margin-bottom: 10px;
-}
-
+aside h3 { margin-top: 0; color: var(--primary-color); }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 10px; }
 aside a {
     text-decoration: none;
     color: var(--secondary-color);
     font-weight: 500;
     transition: color 0.3s;
 }
+aside a:hover { color: var(--primary-color); }
 
-aside a:hover {
-    color: var(--primary-color);
-}
-
-/* Desain Konten Utama */
+/* Konten Utama */
 main {
     flex: 1;
     background: white;
@@ -89,17 +109,8 @@ main {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-main h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-main h3 {
-    color: var(--secondary-color);
-    margin-top: 25px;
-}
+main h2 { color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
+main h3 { color: var(--secondary-color); margin-top: 25px; }
 
 .alert {
     background-color: #e8f4fd;
@@ -109,7 +120,7 @@ main h3 {
     border-radius: 4px;
 }
 
-/* Desain Footer Identitas */
+/* Footer */
 footer {
     background-color: var(--primary-color);
     color: white;
@@ -120,13 +131,60 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Responsif untuk Layar Handphone */
+/* Tombol Gulir ke Atas */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 998;
+    
+    /* Animasi muncul/menghilang */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Responsif & Sidebar HP (Hamburger Menu) */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+    header { padding: 1rem; }
+    
+    .hamburger { display: block; }
+    
+    .container { flex-direction: column; margin-top: 10px;}
+
     aside {
-        flex: auto;
-        position: static;
+        position: fixed;
+        top: 0;
+        left: -300px; /* Sembunyi di luar layar kiri */
+        width: 70%; /* Lebar menu 70%, menyisakan ruang 30% untuk lihat web */
+        max-width: 300px;
+        height: 100vh;
+        border-radius: 0;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    aside.open {
+        left: 0; /* Menu muncul saat class open aktif */
     }
 }
