@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             scrollTimeout = setTimeout(function() {
                 scrollTopBtn.classList.remove('show');
-            }, 5000); 
+            }, 3000); 
         } else {
             scrollTopBtn.classList.remove('show');
         }
