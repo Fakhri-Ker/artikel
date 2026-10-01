@@ -1,0 +1,132 @@
+/* style.css */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --sidebar-width: 250px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    text-align: left; /* Teks rata kiri sesuai kaidah UX materi CMS */
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: capitalize; /* Hindari ALL CAPS sesuai aturan keamanan/UX */
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 20px;
+    min-height: 80vh;
+}
+
+/* Desain Sidebar */
+aside {
+    flex: 0 0 var(--sidebar-width);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    height: fit-content;
+    position: sticky;
+    top: 90px;
+}
+
+aside h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+aside a:hover {
+    color: var(--primary-color);
+}
+
+/* Desain Konten Utama */
+main {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+main h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+main h3 {
+    color: var(--secondary-color);
+    margin-top: 25px;
+}
+
+.alert {
+    background-color: #e8f4fd;
+    border-left: 4px solid var(--secondary-color);
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+/* Desain Footer Identitas */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Responsif untuk Layar Handphone */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    aside {
+        flex: auto;
+        position: static;
+    }
+}
