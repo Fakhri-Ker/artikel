@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Setel waktu mundur 5 detik (5000 milidetik)
             scrollTimeout = setTimeout(function() {
                 scrollTopBtn.classList.remove('show');
-            }, 5000); // Tombol hilang setelah 5 detik didiamkan
+            }, 3000); // Tombol hilang setelah 3 detik didiamkan
         } else {
             scrollTopBtn.classList.remove('show');
         }
