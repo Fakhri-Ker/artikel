@@ -1,3 +1,4 @@
+// script.js
 document.addEventListener("DOMContentLoaded", function() {
     
     // --- 1. Logika Menu Hamburger & Overlay ---
@@ -5,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sidebar = document.getElementById('sidebar');
     const menuOverlay = document.getElementById('menuOverlay');
     const sidebarLinks = document.querySelectorAll('aside a');
+    const header = document.querySelector('header');
 
     // Fungsi buka/tutup menu
     function toggleMenu() {
@@ -23,13 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Tutup menu jika sedang di HP
             if(window.innerWidth <= 768) {
                 sidebar.classList.remove('open');
                 menuOverlay.classList.remove('active');
             }
 
-            // Smooth scroll
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
@@ -41,22 +41,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // --- 2. Logika Tombol Gulir ke Atas (Muncul saat digulir, hilang setelah 5 detik) ---
+    // --- 2. Logika Scroll (Tombol ke Atas & Sembunyikan Judul Header) ---
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     let scrollTimeout;
 
     window.addEventListener('scroll', function() {
-        // Jika layar digulir lebih dari 200px ke bawah
+        // A. Logika Sembunyikan Judul Header di HP
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled'); // Tambah class transparan
+        } else {
+            header.classList.remove('scrolled'); // Kembalikan seperti semula
+        }
+
+        // B. Logika Tombol Gulir ke Atas
         if (window.scrollY > 200) {
             scrollTopBtn.classList.add('show');
             
-            // Hapus hitung mundur sebelumnya
             clearTimeout(scrollTimeout);
             
-            // Setel waktu mundur 5 detik (5000 milidetik)
             scrollTimeout = setTimeout(function() {
                 scrollTopBtn.classList.remove('show');
-            }, 3000); // Tombol hilang setelah 3 detik didiamkan
+            }, 5000); 
         } else {
             scrollTopBtn.classList.remove('show');
         }
