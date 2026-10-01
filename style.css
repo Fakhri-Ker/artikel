@@ -1,3 +1,4 @@
+/* style.css */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -14,7 +15,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: left;
-    overflow-x: hidden; /* Mencegah layar geser ke kanan/kiri */
+    overflow-x: hidden; 
 }
 
 /* Header & Hamburger */
@@ -28,10 +29,11 @@ header {
     z-index: 100;
     display: flex;
     align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hamburger {
-    display: none; /* Sembunyikan di PC */
+    display: none; 
     background: none;
     border: none;
     color: white;
@@ -39,12 +41,16 @@ header {
     cursor: pointer;
     margin-right: 15px;
     padding: 0;
+    transition: background-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease;
 }
 
 header h1 {
     margin: 0;
     font-size: 1.5rem;
     text-transform: capitalize;
+    transition: opacity 0.3s ease, width 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 /* Overlay Gelap saat menu terbuka */
@@ -54,7 +60,7 @@ header h1 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Warna abu-abu bayangan */
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: 999;
     opacity: 0;
     visibility: hidden;
@@ -92,13 +98,19 @@ aside {
 aside h3 { margin-top: 0; color: var(--primary-color); }
 aside ul { list-style: none; padding: 0; margin: 0; }
 aside li { margin-bottom: 10px; }
+
+/* WARNA LINK DAFTAR ISI (Ubah disini agar tidak biru) */
 aside a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: #555555; /* Abu-abu gelap */
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s, padding-left 0.3s;
 }
-aside a:hover { color: var(--primary-color); }
+
+aside a:hover { 
+    color: var(--primary-color); 
+    padding-left: 5px; /* Efek bergeser sedikit saat disentuh */
+}
 
 /* Konten Utama */
 main {
@@ -147,7 +159,6 @@ footer {
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     z-index: 998;
     
-    /* Animasi muncul/menghilang */
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
@@ -164,7 +175,7 @@ footer {
     background-color: var(--primary-color);
 }
 
-/* Responsif & Sidebar HP (Hamburger Menu) */
+/* Responsif & Animasi Header HP */
 @media (max-width: 768px) {
     header { padding: 1rem; }
     
@@ -172,11 +183,32 @@ footer {
     
     .container { flex-direction: column; margin-top: 10px;}
 
+    /* Efek Header Menghilang saat di Scroll */
+    header.scrolled {
+        background-color: transparent;
+        box-shadow: none;
+        pointer-events: none; /* Agar area transparan bisa diklik tembus ke teks bawahnya */
+    }
+
+    header.scrolled h1 {
+        opacity: 0;
+        width: 0; /* Menyembunyikan judul */
+    }
+
+    /* Membuat hamburger menjadi tombol melayang saat di-scroll */
+    header.scrolled .hamburger {
+        background-color: var(--primary-color);
+        padding: 5px 12px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        pointer-events: auto; /* Mengaktifkan kembali klik khusus untuk tombol ini */
+    }
+
     aside {
         position: fixed;
         top: 0;
-        left: -300px; /* Sembunyi di luar layar kiri */
-        width: 70%; /* Lebar menu 70%, menyisakan ruang 30% untuk lihat web */
+        left: -300px; 
+        width: 70%; 
         max-width: 300px;
         height: 100vh;
         border-radius: 0;
@@ -185,6 +217,6 @@ footer {
     }
 
     aside.open {
-        left: 0; /* Menu muncul saat class open aktif */
+        left: 0; 
     }
 }
