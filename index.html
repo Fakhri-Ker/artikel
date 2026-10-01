@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel Fakhri 1D Resume Pert.4</title>
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Materi Pembelajaran Teknologi Web dan CMS</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <h3>Daftar Isi</h3>
+            <ul>
+                <li><a href="#konsep-cms">1. Konsep Dasar CMS</a></li>
+                <li><a href="#pengembangan-web">2. Pengembangan Website</a></li>
+                <li><a href="#kelola-wp">3. Pengelolaan WordPress</a></li>
+                <li><a href="#best-practice">4. Praktik Terbaik & Keamanan</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="konsep-cms">
+                <h2>1. Konsep Dasar Content Management System (CMS)</h2>
+                <p>Pembuatan website awalnya menghadapi banyak kendala, seperti kebutuhan skrip yang banyak untuk mengatur tampilan <i>(user-experience)</i> maupun halaman admin <i>(admin-experience)</i>[span_0](start_span)[span_0](end_span). Jika hanya mengandalkan file HTML statis, pemeliharaannya sangat sulit, rentan merusak sistem saat proses <i>upload</i> melalui FTP, dan butuh pembuatan pernyataan SQL yang berulang-ulang[span_1](start_span)[span_1](end_span)[span_2](start_span)[span_2](end_span).</p>
+                
+                <p>Oleh karena itu, hadirlah <strong>CMS</strong>. CMS adalah sistem perangkat lunak yang memberikan kemudahan kepada penggunanya untuk mengelola, membuat, menghapus, dan memperbarui isi website dinamis tanpa perlu pengetahuan teknis pemrograman (koding)[span_3](start_span)[span_3](end_span)[span_4](start_span)[span_4](end_span). Fungsi utamanya adalah memisahkan antara konten (isi) dengan presentasi (tampilan)[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span).</p>
+
+                <h3>3 CMS Paling Populer di Dunia:</h3>
+                <ul>
+                    <li><strong>WordPress:</strong> Digunakan oleh 140 juta pengguna, memiliki ribuan tema dan plugin, sangat cocok untuk blog dan web perusahaan[span_7](start_span)[span_7](end_span).</li>
+                    <li><strong>Joomla:</strong> Memiliki 30 juta pengguna, cocok untuk situs e-commerce dan jejaring sosial[span_8](start_span)[span_8](end_span).</li>
+                    <li><strong>Drupal:</strong> Digunakan 15 juta pengguna, berkonsep <i>"one size fits all"</i> yang cocok untuk berbagai kebutuhan spesifik[span_9](start_span)[span_9](end_span).</li>
+                </ul>
+            </section>
+
+            <section id="pengembangan-web">
+                <h2>2. Pengenalan dan Pengembangan Website</h2>
+                <p>Website adalah kumpulan halaman yang ditampilkan di sebuah domain, disimpan dalam <i>server hosting</i>, dan diakses lewat internet menggunakan <i>browser</i>[span_10](start_span)[span_10](end_span). Website dibedakan menjadi website statis (diedit manual, menggunakan format HTML) dan dinamis (diperbarui otomatis, menggunakan database, dan bahasa skrip seperti PHP)[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span).</p>
+                
+                <h3>Elemen Dasar Laman Web:</h3>
+                <ul>
+                    <li><strong>Header:</strong> Bagian atas yang memuat judul web, logo, dan navigasi (serta metadata pada kode HTML)[span_13](start_span)[span_13](end_span)[span_14](start_span)[span_14](end_span).</li>
+                    <li><strong>Content Section:</strong> Bagian utama yang menampung isi informasi atau artikel[span_15](start_span)[span_15](end_span).</li>
+                    <li><strong>Sidebar:</strong> Kolom samping sekunder untuk menu tambahan atau artikel terbaru[span_16](start_span)[span_16](end_span).</li>
+                    <li><strong>Footer:</strong> Bagian terbawah yang biasanya berisi hak cipta statis[span_17](start_span)[span_17](end_span).</li>
+                </ul>
+
+                <p>Pengembangan tahap awal bisa menggunakan komputer pribadi sebagai <strong>Local Hosting</strong> dengan aplikasi XAMPP (menjalankan Apache dan MySQL)[span_18](start_span)[span_18](end_span). Setelah siap, file dipindahkan ke <strong>Web Hosting</strong> menggunakan aplikasi FTP seperti FileZilla[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span), dan datanya dikelola via PHPMyAdmin[span_21](start_span)[span_21](end_span).</p>
+            </section>
+
+            <section id="kelola-wp">
+                <h2>3. Instalasi dan Pengelolaan WordPress</h2>
+                <p>Instalasi WordPress dilakukan dengan mengunduh file zip dari situs resminya, mengunggahnya ke <i>web hosting</i>, membuat database, dan menyambungkannya saat menjalankan instalasi via <i>browser</i>[span_22](start_span)[span_22](end_span)[span_23](start_span)[span_23](end_span).</p>
+                
+                <h3>Manajemen Konten:</h3>
+                <ul>
+                    <li><strong>Post:</strong> Konten dinamis yang terikat oleh waktu secara kronologis (misal: berita). Menggunakan Kategori dan Tag[span_24](start_span)[span_24](end_span)[span_25](start_span)[span_25](end_span).</li>
+                    <li><strong>Page:</strong> Konten statis yang tidak terikat waktu, tidak menggunakan kategori atau tag[span_26](start_span)[span_26](end_span).</li>
+                </ul>
+
+                <h3>Manajemen Pengguna (User Level):</h3>
+                <p>Pengelolaan dibagi dalam beberapa peran: <i>Administrator</i> mengurus teknis hosting, <i>Editor</i> dapat mengatur dan menerbitkan artikel semua pengguna, <i>Author</i> hanya bisa mengatur tulisan sendiri, dan <i>Contributor</i> hanya dapat menulis draf tanpa bisa mempublikasikan[span_27](start_span)[span_27](end_span).</p>
+            </section>
+
+            <section id="best-practice">
+                <h2>4. Praktik Terbaik dan Keamanan Web</h2>
+                
+                <div class="alert">
+                    <strong>Penting: Mengapa harus Backup Website?</strong><br>
+                    Website wajib di-<i>backup</i> karena penyedia <i>web hosting</i> tidak selalu bertanggung jawab penuh. Hal ini menjaga agar Anda bisa bereaksi cepat jika terjadi peretasan (<i>hack</i>), memberikan rasa tenang, serta melindungi data dari infeksi virus atau <i>malware</i>[span_28](start_span)[span_28](end_span).
+                </div>
+
+                <h3>Tips Desain & Keamanan (Sesuai Standar UX):</h3>
+                <ul>
+                    <li><strong>Format Teks Rata Kiri (Align Left):</strong> Sangat disarankan mengatur naskah teks menjadi rata kiri, bukan rata kiri-kanan (<i>justify</i>). Teks rata kiri lebih mudah dibaca (<i>readable</i>), nyaman di mata, tidak kaku, dan memang menjadi standar bagi website[span_29](start_span)[span_29](end_span)[span_30](start_span)[span_30](end_span).</li>
+                    <li><strong>Sistem Komentar Disqus:</strong> Pertimbangkan memakai plugin Disqus. Fiturnya membebaskan Anda dari CAPTCHA, aman dari <i>spam</i>, dan memungkinkan pengunjung berdiskusi interaktif memakai akun jejaring sosial[span_31](start_span)[span_31](end_span)[span_32](start_span)[span_32](end_span).</li>
+                    <li><strong>Jangan Gunakan ALL CAPS:</strong> Hindari pemakaian huruf kapital semua pada Judul Post maupun Page. <i>All Caps</i> sulit dipindai mata, mengesankan sedang "berteriak", dan melanggar kode etik penulisan digital[span_33](start_span)[span_33](end_span). Gunakan format awalan besar (Capitalize)[span_34](start_span)[span_34](end_span).</li>
+                    <li><strong>Ganti Username 'admin' & Prefix 'wp_':</strong> Jangan gunakan username "admin" karena mudah ditebak peretas. Ubah juga prefix tabel database bawaan "wp_" dengan kombinasi angka dan huruf untuk meningkatkan sistem keamanan[span_35](start_span)[span_35](end_span).</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Bagian Footer untuk Identitas -->
+    <footer>
+        <p>Fakhri PAI 1D UINSSC</p>
+    </footer>
+
+    <!-- Menghubungkan file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+                              
