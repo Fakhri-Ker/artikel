@@ -12,7 +12,6 @@
     <div id="menuOverlay" class="overlay"></div>
 
     <header>
-        <!-- Tombol Hamburger -->
         <button id="hamburgerBtn" class="hamburger">☰</button>
         <h1>Materi Teknologi Web Dan CMS</h1>
     </header>
@@ -33,9 +32,7 @@
             <section id="konsep-cms">
                 <h2>1. Konsep Dasar Content Management System (CMS)</h2>
                 <p>Pembuatan website awalnya menghadapi banyak kendala, seperti kebutuhan skrip yang banyak untuk mengatur tampilan <i>(user-experience)</i> maupun halaman admin <i>(admin-experience)</i>. Jika hanya mengandalkan file HTML statis, pemeliharaannya sangat sulit, rentan merusak sistem saat proses <i>upload</i> melalui FTP, dan butuh pembuatan pernyataan SQL yang berulang-ulang.</p>
-                
                 <p>Oleh karena itu, hadirlah <strong>CMS</strong>. CMS adalah sistem perangkat lunak yang memberikan kemudahan kepada penggunanya untuk mengelola, membuat, menghapus, dan memperbarui isi website dinamis tanpa perlu pengetahuan teknis pemrograman (koding). Fungsi utamanya adalah memisahkan antara konten (isi) dengan presentasi (tampilan).</p>
-
                 <h3>3 CMS Paling Populer di Dunia:</h3>
                 <ul>
                     <li><strong>WordPress:</strong> Digunakan oleh 140 juta pengguna, memiliki ribuan tema dan plugin, sangat cocok untuk blog dan web perusahaan.</li>
@@ -47,7 +44,6 @@
             <section id="pengembangan-web">
                 <h2>2. Pengenalan dan Pengembangan Website</h2>
                 <p>Website adalah kumpulan halaman yang ditampilkan di sebuah domain, disimpan dalam <i>server hosting</i>, dan diakses lewat internet menggunakan <i>browser</i>. Website dibedakan menjadi website statis (diedit manual, menggunakan format HTML) dan dinamis (diperbarui otomatis, menggunakan database, dan bahasa skrip seperti PHP).</p>
-                
                 <h3>Elemen Dasar Laman Web:</h3>
                 <ul>
                     <li><strong>Header:</strong> Bagian atas yang memuat judul web, logo, dan navigasi (serta metadata pada kode HTML).</li>
@@ -55,38 +51,29 @@
                     <li><strong>Sidebar:</strong> Kolom samping sekunder untuk menu tambahan atau artikel terbaru.</li>
                     <li><strong>Footer:</strong> Bagian terbawah yang biasanya berisi hak cipta statis.</li>
                 </ul>
-
-                <p>Pengembangan tahap awal bisa menggunakan komputer pribadi sebagai <strong>Local Hosting</strong> dengan aplikasi XAMPP (menjalankan Apache dan MySQL). Setelah siap, file dipindahkan ke <strong>Web Hosting</strong> menggunakan aplikasi FTP seperti FileZilla, dan datanya dikelola via PHPMyAdmin.</p>
             </section>
 
             <section id="kelola-wp">
                 <h2>3. Instalasi dan Pengelolaan WordPress</h2>
                 <p>Instalasi WordPress dilakukan dengan mengunduh file zip dari situs resminya, mengunggahnya ke <i>web hosting</i>, membuat database, dan menyambungkannya saat menjalankan instalasi via <i>browser</i>.</p>
-                
                 <h3>Manajemen Konten:</h3>
                 <ul>
                     <li><strong>Post:</strong> Konten dinamis yang terikat oleh waktu secara kronologis (misal: berita). Menggunakan Kategori dan Tag.</li>
                     <li><strong>Page:</strong> Konten statis yang tidak terikat waktu, tidak menggunakan kategori atau tag.</li>
                 </ul>
-
-                <h3>Manajemen Pengguna (User Level):</h3>
-                <p>Pengelolaan dibagi dalam beberapa peran: <i>Administrator</i> mengurus teknis hosting, <i>Editor</i> dapat mengatur dan menerbitkan artikel semua pengguna, <i>Author</i> hanya bisa mengatur tulisan sendiri, dan <i>Contributor</i> hanya dapat menulis draf tanpa bisa mempublikasikan.</p>
             </section>
 
             <section id="best-practice">
                 <h2>4. Praktik Terbaik dan Keamanan Web</h2>
-                
                 <div class="alert">
                     <strong>Penting: Mengapa harus Backup Website?</strong><br>
                     Website wajib di-<i>backup</i> karena penyedia <i>web hosting</i> tidak selalu bertanggung jawab penuh. Hal ini menjaga agar Anda bisa bereaksi cepat jika terjadi peretasan (<i>hack</i>), memberikan rasa tenang, serta melindungi data dari infeksi virus atau <i>malware</i>.
                 </div>
-
                 <h3>Tips Desain & Keamanan (Sesuai Standar UX):</h3>
                 <ul>
-                    <li><strong>Format Teks Rata Kiri (Align Left):</strong> Sangat disarankan mengatur naskah teks menjadi rata kiri, bukan rata kiri-kanan (<i>justify</i>). Teks rata kiri lebih mudah dibaca (<i>readable</i>), nyaman di mata, tidak kaku, dan memang menjadi standar bagi website.</li>
-                    <li><strong>Sistem Komentar Disqus:</strong> Pertimbangkan memakai plugin Disqus. Fiturnya membebaskan Anda dari CAPTCHA, aman dari <i>spam</i>, dan memungkinkan pengunjung berdiskusi interaktif memakai akun jejaring sosial.</li>
-                    <li><strong>Jangan Gunakan ALL CAPS:</strong> Hindari pemakaian huruf kapital semua pada Judul Post maupun Page. <i>All Caps</i> sulit dipindai mata, mengesankan sedang "berteriak", dan melanggar kode etik penulisan digital. Gunakan format awalan besar (Capitalize).</li>
-                    <li><strong>Ganti Username 'admin' & Prefix 'wp_':</strong> Jangan gunakan username "admin" karena mudah ditebak peretas. Ubah juga prefix tabel database bawaan "wp_" dengan kombinasi angka dan huruf untuk meningkatkan sistem keamanan.</li>
+                    <li><strong>Format Teks Rata Kiri (Align Left):</strong> Sangat disarankan mengatur naskah teks menjadi rata kiri, bukan rata kiri-kanan (<i>justify</i>). Teks rata kiri lebih mudah dibaca, nyaman di mata, tidak kaku.</li>
+                    <li><strong>Jangan Gunakan ALL CAPS:</strong> Hindari pemakaian huruf kapital semua pada Judul Post maupun Page. Gunakan format awalan besar (Capitalize).</li>
+                    <li><strong>Ganti Username 'admin' & Prefix 'wp_':</strong> Jangan gunakan username "admin" karena mudah ditebak peretas.</li>
                 </ul>
             </section>
         </main>
@@ -96,8 +83,48 @@
         <p>Fakhri PAI 1D UINSSC</p>
     </footer>
 
-    <!-- Tombol Gulir ke Atas -->
+    <!-- WIDGET POJOK KANAN BAWAH -->
+    
+    <!-- 1. Tombol Gulir ke Atas (Sekarang posisinya di atas tombol musik) -->
     <button id="scrollTopBtn" title="Kembali ke atas">↑</button>
+
+    <!-- 2. Tombol Buka Musik (Permanen) -->
+    <button id="musicToggleBtn" title="Buka/Tutup Pemutar Musik">🎵</button>
+
+    <!-- 3. Popup Pemutar Musik -->
+    <div id="musicPlayerContainer">
+        <div class="player-card">
+            <!-- Tombol silang untuk menutup popup -->
+            <button id="closeMusicBtn" title="Tutup">✖</button>
+            
+            <div id="song-title">Memuat musik...</div>
+            
+            <!-- Indikator Waktu dan Progress Bar -->
+            <div class="time-container">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar" value="0" min="0" max="100">
+                <span id="durationTime">0:00</span>
+            </div>
+            
+            <div class="controls-main">
+                <!-- Tombol Putar Ulang (Loop) -->
+                <button class="btn loop-btn" id="loopBtn" title="Putar Ulang Lagu Ini">🔁</button>
+                <button class="btn" id="prevBtn" title="Sebelumnya">⏮</button>
+                <button class="btn play-btn" id="playPause" title="Putar/Jeda">▶</button>
+                <button class="btn" id="nextBtn" title="Selanjutnya">⏭</button>
+            </div>
+        
+            <div class="bottom-bar">
+                <button class="btn mute-btn" id="muteBtn" title="Bisukan Suara">🔊</button>
+                <button class="list-toggle" id="toggleListBtn">DAFTAR</button>
+            </div>
+        
+            <div class="playlist" id="playlist">
+                <!-- List akan di-generate via JS -->
+            </div>
+        </div>
+        <audio id="audio-player"></audio>
+    </div>
 
     <script src="script.js"></script>
 </body>
