@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // DAFTAR LAGU ANDA (Pastikan file mp3 sudah ada di repositori GitHub Anda)
     const songs = [
-        { title: "Kota Ini Tak Sama Tanpamu", src: "kotataksama.mp3" },
-        { title: "Usik", src: "usik.mp3" },
-        { title: "Melangitkanmu", src: "langit.mp3" }
+        { title: "Kota Ini Tak Sama Tanpamu", src: "musik/kotataksama.mp3" },
+        { title: "Usik", src: "musik/usik.mp3" },
+        { title: "Melangitkanmu", src: "musik/langit.mp3" }
     ];
 
     let currentSongIndex = 0;
